@@ -1,0 +1,53 @@
+{% extends 'PDF_Service/base.html' %}
+{%  block content %}
+        <h2>Doc list</h2>
+    <table>
+        <thead>
+            <tr>
+                <th> Id</th>
+                <th> Name</th>
+                <th> Size</th>
+                <th> Pages</th>
+                <th> Date</th>
+                <th> PDF</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for pdf in PDF_Service_list %}
+                <tr>
+                    <td width="10">
+                        {{ pdf.pk }}
+                    </td>
+                    <td width="150">
+                        {{ pdf.name }}
+                    </td>
+                    <td width="100">
+                        {{ pdf.size }}
+                    </td>
+                    <td width="50">
+                        {{ pdf.page_number }}
+                    </td>
+                    <td width="150">
+                        {{ pdf.date }}
+                    </td>
+                    <td width="400">
+                        {{ pdf.pdf }}
+                    </td>
+                    <td>
+                        <form action="/preview/{{  pdf.id }}/" method = "get">
+                            <input type="submit" value = "pokaz">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/delete/{{  pdf.id }}/" method = "post">
+                            {%csrf_token%}
+                            <input type="submit" value = "usun">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <center><button onclick=location.href="{% url 'PDF_Service_send' %}" id="myButton" class="float-left submit-button" >Wrzuć PDF</button></center>
+{% endblock content %}

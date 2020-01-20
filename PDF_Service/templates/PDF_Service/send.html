@@ -1,0 +1,15 @@
+{% extends 'PDF_Service/base.html' %}
+{%  block content %}
+    <h2>Tu możesz wybrać PDF do wrzucenia</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" accept=".pdf" value="Save">
+    </form>
+    {%  if url %}
+        <div class="alert alert-success" role="alert">
+            Plik wrzucon: <a href="{{  url }}">{{  url }}</a>
+        </div>
+    {%  endif %}
+    <center><button onclick=location.href="{% url 'PDF_Service_list' %}" id="myButton" class="float-left submit-button" >Lista</button></center>
+{% endblock content %}

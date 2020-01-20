@@ -1,0 +1,5 @@
+{% extends 'PDF_Service/base.html' %}
+{%  block content %}
+    <h1> Formularz wysłania pliku jest pusty </h1>
+    <button onclick=location.href="{% url 'PDF_Service_send' %}" id="myButton" class="float-left submit-button" >Wryć</button>
+{% endblock content %}

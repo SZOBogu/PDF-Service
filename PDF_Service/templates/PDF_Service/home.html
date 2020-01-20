@@ -1,0 +1,10 @@
+{% extends 'PDF_Service/base.html' %}
+{%  block content %}
+    <h2>Przetwaranie PDFow</h2>
+    <p> Lista </p>
+    <button onclick=location.href="{% url 'PDF_Service_list' %}" id="myButton" class="float-left submit-button" >Lista</button>
+    <br><br>
+    <p> wrzuć pdfa </p>
+    <button onclick=location.href="{% url 'PDF_Service_send' %}" id="myButton" class="float-left submit-button" >Wrzuć PDF</button>
+
+{% endblock content %}

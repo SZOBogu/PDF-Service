@@ -1,0 +1,9 @@
+{% extends 'PDF_Service/base.html' %}
+{%  block content %}
+    <h2>Upload doc</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"> Wrzuc</button>
+    </form>
+{% endblock content %}

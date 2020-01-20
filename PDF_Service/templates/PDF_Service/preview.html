@@ -1,0 +1,30 @@
+{% extends 'PDF_Service/base.html' %}
+{%  block content %}
+    <h2>{{ pages.id_dokument.name }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th> <center>Text</center> </th>
+                <th> <center>Thumbnail</center> </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pages in PDF_Service_preview %}
+                <tr>
+                    <td width="1000">
+                        {{ pages.text }}
+                    </td>
+                    <td>
+                        <img src="/media/{{ pages.thumbnail }}" alt="Thumbnail" style="width:200px; height:260px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><p>{{ pages.nr }}</p></center>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick=location.href="{% url 'PDF_Service_list' %}" id="myButton" class="float-left submit-button" >Lista</button>
+{% endblock content %}

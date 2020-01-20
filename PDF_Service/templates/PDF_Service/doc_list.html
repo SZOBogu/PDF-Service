@@ -1,0 +1,36 @@
+{% extends 'PDF_Service/base.html' %}
+{%  block content %}
+    <h2>Doc list</h2>
+    <table>
+        <thead>
+            <tr>
+                <th> name</th>
+                <th> size</th>
+                <th> pages</th>
+                <th> date</th>
+                <th> pdf</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%  for doc in documents %}
+                <tr>
+                    <td width="50">
+                        {{ doc.name }}
+                    </td width="10">
+                    <td>
+                        {{ doc.size }}
+                    </td width="10">
+                    <td>
+                        {{ doc.page_number }}
+                    </td>
+                    <td width="200">
+                        {{ doc.date }}
+                    </td width="500">
+                    <td>
+                        {{ doc.pdf }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
