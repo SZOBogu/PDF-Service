@@ -20,8 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f7m0&r(rw@r#le%e#3+vidwmk!_ybt*j^b(=iw$ttc@ivmw)mh'
-SERVER_EMAIL = 'bogowymaildolola@gmail.com'
+SECRET_KEY = XXX
+SERVER_EMAIL = XXX
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'Praktyka.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'praktyka',
-        'USER': 'postgres',
-        'PASSWORD': 'haslo123',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': XXX,
+        'USER': XXX,
+        'PASSWORD': XXX,
+        'HOST': XXX,
+        'PORT': XXX
     }
 }
 
